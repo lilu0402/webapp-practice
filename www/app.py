@@ -18,7 +18,7 @@ async def init(loop):
     app = web.Application(loop=loop)
     # add get method:
     app.router.add_route('GET', '/', index)
-    # create a web service using asyn coroutine:
+    # create a web service using async coroutine:
     srv = await loop.create_server(app.make_handler(), '127.0.0.1', 9000)
     #  set the log info:
     logging.info('server started at http://127.0.0.1:9000...')
